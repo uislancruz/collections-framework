@@ -1,15 +1,17 @@
 package com.algaworks.agencia;
 
+import java.util.Objects;
+
 public class Hotel {
 
     private String nome;
     private String cidade;
-    private double preco;
+    private double precoDiaria;
 
-    public Hotel(String cidade, String nome, double preco) {
-        this.cidade = cidade;
+    public Hotel(String nome, String cidade, double preco) {
         this.nome = nome;
-        this.preco = preco;
+        this.cidade = cidade;
+        this.precoDiaria = preco;
     }
 
     public String getCidade() {
@@ -20,12 +22,16 @@ public class Hotel {
         this.cidade = cidade;
     }
 
-    public double getPreco() {
-        return preco;
+    public double getPrecoDiaria() {
+        return precoDiaria;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setPrecoDiaria(double precoDiaria) {
+        if (precoDiaria < 0) {
+            throw new IllegalArgumentException("Preço diario não pode ser negativo");
+        }
+
+        this.precoDiaria = precoDiaria;
     }
 
     public String getNome() {
@@ -33,15 +39,16 @@ public class Hotel {
     }
 
     public void setNome(String nome) {
+        Objects.requireNonNull(nome);
         this.nome = nome;
     }
 
     @Override
     public String toString() {
         return "Hotel{" +
-                "cidade='" + cidade + '\'' +
-                ", nome='" + nome + '\'' +
-                ", preco=" + preco +
+                "nome='" + nome + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", precoDiaria=" + precoDiaria +
                 '}';
     }
 }

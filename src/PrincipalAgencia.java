@@ -7,17 +7,21 @@ public class PrincipalAgencia {
 
     static void main(String[] args) {
         CadastroHotel cadastroHotel = new CadastroHotel();
-
         cadastroHotel.adicionar("Jaguaribe lodge", "Fortim/CE", 1300);
         cadastroHotel.adicionar("Vila Selvagem", "Fortim/CE", 1400);
         cadastroHotel.adicionar("Hotel fazenda Dona Carolina", "Itatiba/SP", 1200);
         cadastroHotel.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 1400);
         cadastroHotel.adicionar("Mecure", "Uberlândia/MG", 1300);
-        cadastroHotel.adicionar("Vila Selvagem", "Fortim/CE", 1400);
 
+        //cadastroHotel.adicionar("Vila Selvagem", "Fortim/CE", 1400);
 
        ArrayList<Hotel> hoteis = cadastroHotel.obterTodos();
-       imprimirHoteis(hoteis);
+        int indice = hoteis.indexOf(new Hotel("Vila Selvagem", "Fortim/CE", 1300));
+        //imprimirHoteis(hoteis);
+
+        System.out.println(indice);
+
+       System.out.println(hoteis.get(indice));
 
     }
 

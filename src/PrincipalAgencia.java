@@ -2,6 +2,7 @@ import com.algaworks.agencia.CadastroHotel;
 import com.algaworks.agencia.Hotel;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PrincipalAgencia {
 
@@ -13,6 +14,8 @@ public class PrincipalAgencia {
         cadastroHotel.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 1400);
         cadastroHotel.adicionar("Mecure", "Uberlândia/MG", 1300);
 
+        cadastroHotel.removerPorCidade("Fortim/CE");
+
 
         ArrayList<Hotel> hoteis = cadastroHotel.obterTodos();
         imprimirHoteis(hoteis);
@@ -23,6 +26,12 @@ public class PrincipalAgencia {
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis){
 
+        Iterator<Hotel> hoteisIterator = hoteis.iterator();
+        while(hoteisIterator.hasNext()){
+            Hotel hotel = hoteisIterator.next();
+            System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
+        }
+
         //o que eu fiz for aprimorado eachFor
 
 //        for (Object hotel : hoteis) {
@@ -31,11 +40,11 @@ public class PrincipalAgencia {
 
         //Exemplo aula
 
-        for (int i = 0; i < hoteis.size(); i++) {
-
-            Hotel hotel = hoteis.get(i);
-            System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
-
-        }
+//        for (int i = 0; i < hoteis.size(); i++) {
+//
+//            Hotel hotel = hoteis.get(i);
+//            System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
+//
+//        }
     }
 }

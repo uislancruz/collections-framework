@@ -13,21 +13,18 @@ public class PrincipalAgencia {
         cadastroHotel.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 1400);
         cadastroHotel.adicionar("Mecure", "Uberlândia/MG", 1300);
 
-        //cadastroHotel.adicionar("Vila Selvagem", "Fortim/CE", 1400);
 
-       ArrayList<Hotel> hoteis = cadastroHotel.obterTodos();
-        int indice = hoteis.indexOf(new Hotel("Vila Selvagem", "Fortim/CE", 1300));
-        //imprimirHoteis(hoteis);
+        ArrayList<Hotel> hoteis = cadastroHotel.obterTodos();
+        imprimirHoteis(hoteis);
 
-        System.out.println(indice);
 
-       System.out.println(hoteis.get(indice));
 
     }
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis){
 
         //o que eu fiz for aprimorado eachFor
+
 //        for (Object hotel : hoteis) {
 //            System.out.println(hotel.toString());
 //        }

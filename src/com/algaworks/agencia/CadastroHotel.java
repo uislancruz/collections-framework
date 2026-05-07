@@ -34,19 +34,6 @@ public class CadastroHotel {
 
         }
 
-
-//        ArrayList<Hotel> hoteisParaRemocao = new ArrayList<>();
-//
-//        for (int i = 0; i < hoteis.size(); i++) {
-//            Hotel hotel = hoteis.get(i);
-//
-//            if(hotel.getCidade().equals(cidade)) {
-//                hoteisParaRemocao.add(hotel);
-////                hoteis.remove(i);
-////                i--;
-//            }
-//        }
-//        hoteis.removeAll(hoteisParaRemocao);
     }
 
     public void remover(Hotel hotel) {

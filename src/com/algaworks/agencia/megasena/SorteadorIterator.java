@@ -1,16 +1,25 @@
 package com.algaworks.agencia.megasena;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class SorteadorIterator implements Iterator<Integer>{
 
+    private static final Random RANDOM = new Random();
+    private int quantidadeSorteada;
+
     @Override
     public boolean hasNext() {
-        return false;
+        return quantidadeSorteada < 6;
     }
 
     @Override
     public Integer next() {
-        return 0;
+        if(!hasNext()){
+            throw new NoSuchElementException("Todos os numeros já foram sorteados");
+        }
+        quantidadeSorteada++;
+        return RANDOM.nextInt(60);
     }
 }

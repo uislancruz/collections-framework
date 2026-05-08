@@ -1,9 +1,7 @@
-import com.algaworks.agencia.CadastroHotel;
-import com.algaworks.agencia.Hotel;
+import com.algaworks.agencia.hotel.CadastroHotel;
+import com.algaworks.agencia.hotel.Hotel;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
 
 public class PrincipalAgencia {
 
@@ -24,17 +22,12 @@ public class PrincipalAgencia {
     }
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
-        ListIterator<Hotel> hotelIterator = hoteis.listIterator(hoteis.size());
-        while (hotelIterator.hasPrevious()) {
-            Hotel hotel = hotelIterator.previous();
+        for (Hotel hotel : hoteis) {
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
 
-//        Iterator<Hotel> hotelIterator = hoteis.iterator();
-//        while(hotelIterator.hasNext()){
-//            Hotel hotel = hotelIterator.next();
-//            System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
-//        }
-
         }
+
     }
+
 }
+

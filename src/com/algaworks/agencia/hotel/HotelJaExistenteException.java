@@ -1,4 +1,4 @@
-package com.algaworks.agencia;
+package com.algaworks.agencia.hotel;
 
 public class HotelJaExistenteException extends RuntimeException{
 

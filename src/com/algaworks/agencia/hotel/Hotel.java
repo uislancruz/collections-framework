@@ -1,4 +1,4 @@
-package com.algaworks.agencia;
+package com.algaworks.agencia.hotel;
 
 import java.util.Objects;
 
